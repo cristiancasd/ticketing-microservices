@@ -1,11 +1,12 @@
 apiVersion: skaffold/v2alpha3
+#apiVersion: skaffold/v4beta2
 kind: Config
-deploy:
+deploy: 
   kubectl:
     manifests:
       - ./infra/k8s/*
 build:
-  local:
+  local: 
     push: false
   #googleCloudBuild:
   #  projectId: project-ticketing-dev
@@ -18,4 +19,12 @@ build:
       sync:
         manual:
           - src: "src/**/*.ts"
+            dest: .
+    - image: cristiancasd/ticketing-client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.js'
             dest: .
