@@ -24,7 +24,7 @@ router.post(
 
     if (!errors.isEmpty()) {
       throw new RequestValidationError(errors.array());
-    }
+    } 
 
     const { email, password } = req.body;
 
