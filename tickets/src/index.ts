@@ -6,7 +6,7 @@ const start = async () => {
     throw new Error('JWT_KEY must be defined');
   }
  
-  console.log('Starting up 4...');
+  console.log('Starting up 5...');
 
   try {
     await mongoose.connect('mongodb://auth-mongo-srv:27017/auth',{});
