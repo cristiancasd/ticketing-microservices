@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import { app } from './app';
 
 const start = async () => {
-  console.log('Starting up 6...');
+  console.log('Starting up Digital Ocean');
   if (!process.env.JWT_KEY) {
     throw new Error('JWT_KEY must be defined');
   }
